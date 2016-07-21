@@ -1,9 +1,6 @@
 package com.POM.test;
 
-import java.awt.Desktop.Action;
-
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class UOM 

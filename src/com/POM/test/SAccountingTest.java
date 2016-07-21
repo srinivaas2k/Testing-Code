@@ -1,6 +1,5 @@
 package com.POM.test;
 
-import java.awt.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
@@ -10,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Sleeper;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
@@ -30,7 +27,7 @@ public class SAccountingTest
 		LoginPage lp = PageFactory.initElements(d, LoginPage.class);
 		lp.AdminLogin("admin", "master");
 		
-		//Shomepage hp= PageFactory.initElements(d, Shomepage.class);
+		Shomepage hp= PageFactory.initElements(d, Shomepage.class);
 		
 		/*list=d.findElements(By.tagName("a"));
 		for ( i = 0; i < list.size(); i++) 
@@ -39,25 +36,18 @@ public class SAccountingTest
 			System.out.println(lst);
 		}
 		System.out.println(i);*/
-		//hp.Shomepage();
+		hp.Shomepage();
 		
 		Actions act = new Actions(d);
 		act.moveToElement(d.findElement(By.linkText("Stock Items"))).build().perform();
-	
+		
 		StockCategory sc = PageFactory.initElements(d, StockCategory.class);
 		sc.Scategory("srinivas001");
 		
-		Actions act1 = new Actions(d);
-		act1.moveToElement(d.findElement(By.linkText("Stock Items"))).build().perform();
+		Thread.sleep(2000);
+		act.moveToElement(d.findElement(By.linkText("Stock Items"))).build().perform();
 		UOM uom = PageFactory.initElements(d, UOM.class);
 		uom.UOM("2005", "salesof mobiles");
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		}
